@@ -30,7 +30,7 @@ struct ProductListView: View {
                     ], spacing: 20) {
                         ForEach(filteredProducts, id: \.self) { product in
                             NavigationLink {
-                                Text(product.title)
+                                ProductDetailView(product: product)
                             } label: {
                                 VStack {
                                     ProductCard(product: product)

@@ -24,7 +24,6 @@ struct ProductCard: View {
                        placeholder: {
                            ProgressView()
                        })
-
             VStack(alignment: .leading, spacing: 4) {
                 Text(product.title)
                     .lineLimit(1)
