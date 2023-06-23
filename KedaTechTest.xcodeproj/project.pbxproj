@@ -12,6 +12,11 @@
 		108D9C042A458D02002A2E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108D9C032A458D02002A2E43 /* Assets.xcassets */; };
 		108D9C072A458D02002A2E43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108D9C062A458D02002A2E43 /* Preview Assets.xcassets */; };
 		108D9C122A458D5C002A2E43 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C112A458D5C002A2E43 /* ProductListView.swift */; };
+		108D9C1C2A45F152002A2E43 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C1B2A45F152002A2E43 /* Product.swift */; };
+		108D9C222A45F22A002A2E43 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C212A45F22A002A2E43 /* WebService.swift */; };
+		108D9C252A45F821002A2E43 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C242A45F821002A2E43 /* ProductCard.swift */; };
+		108D9C282A45F9F6002A2E43 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C272A45F9F6002A2E43 /* Double.swift */; };
+		108D9C2B2A45FA8C002A2E43 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		108D9C032A458D02002A2E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		108D9C062A458D02002A2E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		108D9C112A458D5C002A2E43 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		108D9C1B2A45F152002A2E43 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		108D9C212A45F22A002A2E43 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		108D9C242A45F821002A2E43 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
+		108D9C272A45F9F6002A2E43 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,9 @@
 		108D9BFE2A458D00002A2E43 /* KedaTechTest */ = {
 			isa = PBXGroup;
 			children = (
+				108D9C292A45FA80002A2E43 /* ViewModel */,
+				108D9C262A45F9E1002A2E43 /* Extensions */,
+				108D9C202A45F216002A2E43 /* Service */,
 				108D9C132A458DE6002A2E43 /* Model */,
 				108D9C0E2A458D1F002A2E43 /* View */,
 				108D9BFF2A458D00002A2E43 /* KedaTechTestApp.swift */,
@@ -74,6 +87,7 @@
 		108D9C0E2A458D1F002A2E43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				108D9C232A45F814002A2E43 /* Components */,
 				108D9C112A458D5C002A2E43 /* ProductListView.swift */,
 			);
 			path = View;
@@ -82,8 +96,41 @@
 		108D9C132A458DE6002A2E43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				108D9C1B2A45F152002A2E43 /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		108D9C202A45F216002A2E43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				108D9C212A45F22A002A2E43 /* WebService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		108D9C232A45F814002A2E43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				108D9C242A45F821002A2E43 /* ProductCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		108D9C262A45F9E1002A2E43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				108D9C272A45F9F6002A2E43 /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		108D9C292A45FA80002A2E43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108D9C222A45F22A002A2E43 /* WebService.swift in Sources */,
 				108D9C122A458D5C002A2E43 /* ProductListView.swift in Sources */,
+				108D9C1C2A45F152002A2E43 /* Product.swift in Sources */,
 				108D9C022A458D00002A2E43 /* ContentView.swift in Sources */,
 				108D9C002A458D00002A2E43 /* KedaTechTestApp.swift in Sources */,
+				108D9C252A45F821002A2E43 /* ProductCard.swift in Sources */,
+				108D9C2B2A45FA8C002A2E43 /* ProductListViewModel.swift in Sources */,
+				108D9C282A45F9F6002A2E43 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

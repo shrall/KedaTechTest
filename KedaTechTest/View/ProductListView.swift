@@ -9,46 +9,41 @@ import SwiftUI
 
 struct ProductListView: View {
     let navigationTitle: String
-    let names = ["Holly", "Josh", "Rhonda", "Ted"]
-    @State private var searchText = ""
-    var searchResults: [String] {
-        if searchText.isEmpty {
-            return names
+    @StateObject private var productListVM = ProductListViewModel()
+
+    var filteredProducts: [Product] {
+        if productListVM.searchText.isEmpty {
+            return productListVM.products
         } else {
-            return names.filter { $0.lowercased().contains(searchText.lowercased()) }
+            return productListVM.products.filter { $0.title.lowercased().contains(productListVM.searchText.lowercased()) }
         }
     }
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: [
-                    GridItem(.adaptive(minimum: 160))
-                ], spacing: 20) {
-                    ForEach(searchResults, id: \.self) { name in
-                        NavigationLink {
-                            Text(name)
-                        } label: {
-                            VStack {
-                                AsyncImage(url: URL(string: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"),
-                                           content: { image in
-                                               image.resizable()
-                                                   .aspectRatio(contentMode: .fit)
-                                                   .frame(maxWidth: 200, maxHeight: 100)
-                                           },
-                                           placeholder: {
-                                               ProgressView()
-                                           })
-                                Text(name)
+            ZStack {
+                ProgressView()
+                    .opacity(productListVM.products.count > 0 ? 0 : 1)
+                ScrollView {
+                    LazyVGrid(columns: [
+                        GridItem(.adaptive(minimum: 160))
+                    ], spacing: 20) {
+                        ForEach(filteredProducts, id: \.self) { product in
+                            NavigationLink {
+                                Text(product.title)
+                            } label: {
+                                VStack {
+                                    ProductCard(product: product)
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
             .navigationTitle(navigationTitle)
         }
-        .searchable(text: $searchText)
+        .searchable(text: $productListVM.searchText)
     }
 }
 
