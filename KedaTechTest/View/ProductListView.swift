@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProductListView: View {
     @StateObject private var productListVM = ProductListViewModel()
-    let navigationTitle: String
 
     var filteredProducts: [Product] {
         if productListVM.searchText.isEmpty {
@@ -31,9 +30,12 @@ struct ProductListView: View {
                         ForEach(filteredProducts, id: \.self) { product in
                             NavigationLink {
                                 ProductDetailView(productID: product.id)
+                                    .onDisappear{
+                                        productListVM.getAllProducts()
+                                    }
                             } label: {
                                 VStack {
-                                    ProductCard(product: product)
+                                    ProductCard(image: product.image, title: product.title, category: product.category, price: product.price)
                                 }
                             }
                         }
@@ -41,14 +43,11 @@ struct ProductListView: View {
                     .padding(.horizontal)
                 }
             }
-            .navigationTitle(navigationTitle)
+            .navigationTitle("Products")
         }
         .searchable(text: $productListVM.searchText)
-    }
-}
-
-struct ProductListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductListView(navigationTitle: "")
+        .onAppear{
+            productListVM.getAllProducts()
+        }
     }
 }

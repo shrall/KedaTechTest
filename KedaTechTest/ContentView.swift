@@ -11,12 +11,12 @@ struct ContentView: View {
     @State private var tabSelection = 1
     var body: some View {
         TabView(selection: $tabSelection) {
-            ProductListView(navigationTitle: "Products")
+            ProductListView()
                 .tabItem {
                     Label("Products", systemImage: "magnifyingglass")
                 }
                 .tag(1)
-            ProductListView(navigationTitle: "Favorites")
+            FavoriteProductListView()
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }

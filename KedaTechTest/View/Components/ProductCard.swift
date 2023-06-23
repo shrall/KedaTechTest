@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ProductCard: View {
-    let product: Product
+    let image: String
+    let title: String
+    let category: String
+    let price: Double
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: product.image),
+            AsyncImage(url: URL(string: image),
                        content: { image in
                            image
                                .resizable()
@@ -25,14 +28,14 @@ struct ProductCard: View {
                            ProgressView()
                        })
             VStack(alignment: .leading, spacing: 4) {
-                Text(product.title)
+                Text(title)
                     .lineLimit(1)
                     .bold()
-                Text(product.category)
+                Text(category)
                     .font(.caption.bold())
                     .foregroundColor(.gray)
                 HStack {
-                    Text("$\(product.price.setMaximumFractions(2))")
+                    Text("$\(price.setMaximumFractions(2))")
                         .font(.headline.bold())
                         .padding(.top, 8)
                 }

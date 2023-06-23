@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    let productID: Int
     @StateObject var productDetailVM: ProductDetailViewModel = ProductDetailViewModel()
+    let productID: Int
 
     var body: some View {
         VStack {

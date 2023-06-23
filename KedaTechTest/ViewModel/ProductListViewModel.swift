@@ -11,10 +11,6 @@ class ProductListViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var searchText: String = ""
 
-    init() {
-        getAllProducts()
-    }
-
     func getAllProducts() {
         // Fetch products
         let url = URL(string: "https://fakestoreapi.com/products")!
