@@ -13,6 +13,7 @@ struct Product: Codable, Hashable{
     static func == (lhs: Product, rhs: Product) -> Bool {
         return lhs.title == rhs.title
     }
+    
     func hash(into hasher: inout Hasher) {
       hasher.combine(title)
       hasher.combine(id)

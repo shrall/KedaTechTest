@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    let product: Product
+    let productID: Int
+    @StateObject var productDetailVM: ProductDetailViewModel = ProductDetailViewModel()
+
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: product.image),
+            AsyncImage(url: URL(string: productDetailVM.product.image),
                        content: { image in
                            image
                                .resizable()
@@ -24,27 +26,35 @@ struct ProductDetailView: View {
                            ProgressView()
                        })
             HStack {
-                Text("$\(product.price.setMaximumFractions(2)) - \(product.title)")
+                Text("$\(productDetailVM.product.price.setMaximumFractions(2)) - \(productDetailVM.product.title)")
                     .font(.title3.bold())
                     .multilineTextAlignment(.leading)
                 Spacer()
-                Image(systemName: "star")
-                    .foregroundColor(.yellow)
+                Button{
+                    productDetailVM.toggleFavorite(productID)
+                }label:{
+                    Image(systemName: productDetailVM.isFavorite ? "star.fill" : "star")
+                        .foregroundColor(.yellow)
+                }
             }
             .padding(.horizontal)
             Divider()
-            Text(product.description)
+            Text(productDetailVM.product.description)
                 .font(.body)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal)
             Divider()
             List {
-                Text("Category: \(product.category)")
-                Text("Rating: \(product.rating.rate.setMaximumFractions(2)) (\(product.rating.count) votes)")
+                Text("Category: \(productDetailVM.product.category)")
+                Text("Rating: \(productDetailVM.product.rating.rate.setMaximumFractions(2)) (\(productDetailVM.product.rating.count) votes)")
             }
             .listStyle(.plain)
             .scrollDisabled(true)
             Spacer()
+        }
+        .onAppear{
+            productDetailVM.getProduct(productID)
+            productDetailVM.checkFavorite(productID)
         }
     }
 }

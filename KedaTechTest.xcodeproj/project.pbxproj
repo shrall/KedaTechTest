@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1022A7722A461C30002C2A38 /* KedaTechTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1022A7702A461C30002C2A38 /* KedaTechTest.xcdatamodeld */; };
 		108D9C002A458D00002A2E43 /* KedaTechTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9BFF2A458D00002A2E43 /* KedaTechTestApp.swift */; };
 		108D9C022A458D00002A2E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C012A458D00002A2E43 /* ContentView.swift */; };
 		108D9C042A458D02002A2E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108D9C032A458D02002A2E43 /* Assets.xcassets */; };
@@ -18,9 +19,12 @@
 		108D9C282A45F9F6002A2E43 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C272A45F9F6002A2E43 /* Double.swift */; };
 		108D9C2B2A45FA8C002A2E43 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */; };
 		108D9C2D2A46045C002A2E43 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C2C2A46045C002A2E43 /* ProductDetailView.swift */; };
+		108D9C2F2A4610B0002A2E43 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C2E2A4610B0002A2E43 /* ProductDetailViewModel.swift */; };
+		108D9C312A461257002A2E43 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D9C302A461257002A2E43 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1022A7712A461C30002C2A38 /* KedaTechTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KedaTechTest.xcdatamodel; sourceTree = "<group>"; };
 		108D9BFC2A458D00002A2E43 /* KedaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KedaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		108D9BFF2A458D00002A2E43 /* KedaTechTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KedaTechTestApp.swift; sourceTree = "<group>"; };
 		108D9C012A458D00002A2E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 		108D9C272A45F9F6002A2E43 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		108D9C2C2A46045C002A2E43 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		108D9C2E2A4610B0002A2E43 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		108D9C302A461257002A2E43 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 		108D9BF32A458D00002A2E43 = {
 			isa = PBXGroup;
 			children = (
+				1022A7702A461C30002C2A38 /* KedaTechTest.xcdatamodeld */,
 				108D9BFE2A458D00002A2E43 /* KedaTechTest */,
 				108D9BFD2A458D00002A2E43 /* Products */,
 			);
@@ -74,6 +81,7 @@
 				108D9C012A458D00002A2E43 /* ContentView.swift */,
 				108D9C032A458D02002A2E43 /* Assets.xcassets */,
 				108D9C052A458D02002A2E43 /* Preview Content */,
+				108D9C302A461257002A2E43 /* Persistence.swift */,
 			);
 			path = KedaTechTest;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				108D9C2A2A45FA8C002A2E43 /* ProductListViewModel.swift */,
+				108D9C2E2A4610B0002A2E43 /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,10 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108D9C312A461257002A2E43 /* Persistence.swift in Sources */,
 				108D9C222A45F22A002A2E43 /* WebService.swift in Sources */,
 				108D9C122A458D5C002A2E43 /* ProductListView.swift in Sources */,
 				108D9C1C2A45F152002A2E43 /* Product.swift in Sources */,
+				108D9C2F2A4610B0002A2E43 /* ProductDetailViewModel.swift in Sources */,
 				108D9C022A458D00002A2E43 /* ContentView.swift in Sources */,
+				1022A7722A461C30002C2A38 /* KedaTechTest.xcdatamodeld in Sources */,
 				108D9C002A458D00002A2E43 /* KedaTechTestApp.swift in Sources */,
 				108D9C252A45F821002A2E43 /* ProductCard.swift in Sources */,
 				108D9C2B2A45FA8C002A2E43 /* ProductListViewModel.swift in Sources */,
@@ -415,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1022A7702A461C30002C2A38 /* KedaTechTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1022A7712A461C30002C2A38 /* KedaTechTest.xcdatamodel */,
+			);
+			currentVersion = 1022A7712A461C30002C2A38 /* KedaTechTest.xcdatamodel */;
+			path = KedaTechTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 108D9BF42A458D00002A2E43 /* Project object */;
 }

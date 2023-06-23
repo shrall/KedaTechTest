@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProductListView: View {
-    let navigationTitle: String
     @StateObject private var productListVM = ProductListViewModel()
+    let navigationTitle: String
 
     var filteredProducts: [Product] {
         if productListVM.searchText.isEmpty {
@@ -30,7 +30,7 @@ struct ProductListView: View {
                     ], spacing: 20) {
                         ForEach(filteredProducts, id: \.self) { product in
                             NavigationLink {
-                                ProductDetailView(product: product)
+                                ProductDetailView(productID: product.id)
                             } label: {
                                 VStack {
                                     ProductCard(product: product)

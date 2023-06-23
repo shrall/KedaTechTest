@@ -22,4 +22,19 @@ class WebService {
             }
         }.resume()
     }
+
+    func getProduct(url: URL, completion: @escaping (Product?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
+            } else if let data = data {
+                let result = try? JSONDecoder().decode(Product.self, from: data)
+
+                if let result = result {
+                    completion(result)
+                }
+            }
+        }.resume()
+    }
 }
